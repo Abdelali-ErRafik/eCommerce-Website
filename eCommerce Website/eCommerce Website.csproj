@@ -1,0 +1,495 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.11.1\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.11.1\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EDD2D125-1811-4C1F-97D3-C4CD9FEE30ED}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eCommerce_Website</RootNamespace>
+    <AssemblyName>eCommerce Website</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44348</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\addadmin.aspx" />
+    <Content Include="admin\addbrand.aspx" />
+    <Content Include="admin\addcategory.aspx" />
+    <Content Include="admin\addgender.aspx" />
+    <Content Include="admin\addproduct.aspx" />
+    <Content Include="admin\addsize.aspx" />
+    <Content Include="admin\adduser.aspx" />
+    <Content Include="admin\adminhome.aspx" />
+    <Content Include="admin\addsubcategory.aspx" />
+    <Content Include="admin\admins.aspx" />
+    <Content Include="admin\brands.aspx" />
+    <Content Include="admin\categories.aspx" />
+    <Content Include="admin\editadmin.aspx" />
+    <Content Include="admin\editbrand.aspx" />
+    <Content Include="admin\editproduct.aspx" />
+    <Content Include="admin\editsize.aspx" />
+    <Content Include="admin\editsubcategory.aspx" />
+    <Content Include="admin\edituser.aspx" />
+    <Content Include="admin\genders.aspx" />
+    <Content Include="admin\payment.aspx" />
+    <Content Include="admin\products.aspx" />
+    <Content Include="admin\sizes.aspx" />
+    <Content Include="admin\subcategories.aspx" />
+    <Content Include="admin\users.aspx" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\dashcard.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\payment.css" />
+    <Content Include="assets\css\productscard.css" />
+    <Content Include="assets\css\search.css" />
+    <Content Include="assets\images\man.jpg" />
+    <Content Include="assets\images\woman55ds.jpg" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="cart.aspx" />
+    <Content Include="admin\editcategory.aspx" />
+    <Content Include="admin\editgender.aspx" />
+    <Content Include="footwear.aspx" />
+    <Content Include="forgotpassword.aspx" />
+    <Content Include="man.aspx" />
+    <Content Include="pants.aspx" />
+    <Content Include="payment.aspx" />
+    <Content Include="products.aspx" />
+    <Content Include="productview.aspx" />
+    <Content Include="recoverpassword.aspx" />
+    <Content Include="signin.aspx" />
+    <Content Include="signup.aspx" />
+    <Content Include="userhome.aspx" />
+    <Content Include="watches.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="edashop.aspx" />
+    <Content Include="woman.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin\addadmin.aspx.cs">
+      <DependentUpon>addadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addadmin.aspx.designer.cs">
+      <DependentUpon>addadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addbrand.aspx.cs">
+      <DependentUpon>addbrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addbrand.aspx.designer.cs">
+      <DependentUpon>addbrand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addcategory.aspx.cs">
+      <DependentUpon>addcategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addcategory.aspx.designer.cs">
+      <DependentUpon>addcategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addgender.aspx.cs">
+      <DependentUpon>addgender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addgender.aspx.designer.cs">
+      <DependentUpon>addgender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addproduct.aspx.cs">
+      <DependentUpon>addproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addproduct.aspx.designer.cs">
+      <DependentUpon>addproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addsize.aspx.cs">
+      <DependentUpon>addsize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addsize.aspx.designer.cs">
+      <DependentUpon>addsize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\adduser.aspx.cs">
+      <DependentUpon>adduser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adduser.aspx.designer.cs">
+      <DependentUpon>adduser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admin.Master.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin.Master.designer.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\adminhome.aspx.cs">
+      <DependentUpon>adminhome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\adminhome.aspx.designer.cs">
+      <DependentUpon>adminhome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addsubcategory.aspx.cs">
+      <DependentUpon>addsubcategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addsubcategory.aspx.designer.cs">
+      <DependentUpon>addsubcategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\admins.aspx.cs">
+      <DependentUpon>admins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admins.aspx.designer.cs">
+      <DependentUpon>admins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\brands.aspx.cs">
+      <DependentUpon>brands.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\brands.aspx.designer.cs">
+      <DependentUpon>brands.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\categories.aspx.cs">
+      <DependentUpon>categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\categories.aspx.designer.cs">
+      <DependentUpon>categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\editadmin.aspx.cs">
+      <DependentUpon>editadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editadmin.aspx.designer.cs">
+      <DependentUpon>editadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\editbrand.aspx.cs">
+      <DependentUpon>editbrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editbrand.aspx.designer.cs">
+      <DependentUpon>editbrand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\editproduct.aspx.cs">
+      <DependentUpon>editproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editproduct.aspx.designer.cs">
+      <DependentUpon>editproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\editsize.aspx.cs">
+      <DependentUpon>editsize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editsize.aspx.designer.cs">
+      <DependentUpon>editsize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\editsubcategory.aspx.cs">
+      <DependentUpon>editsubcategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editsubcategory.aspx.designer.cs">
+      <DependentUpon>editsubcategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\edituser.aspx.cs">
+      <DependentUpon>edituser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\edituser.aspx.designer.cs">
+      <DependentUpon>edituser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\genders.aspx.cs">
+      <DependentUpon>genders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\genders.aspx.designer.cs">
+      <DependentUpon>genders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\payment.aspx.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\payment.aspx.designer.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\products.aspx.cs">
+      <DependentUpon>products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\products.aspx.designer.cs">
+      <DependentUpon>products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\sizes.aspx.cs">
+      <DependentUpon>sizes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\sizes.aspx.designer.cs">
+      <DependentUpon>sizes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\subcategories.aspx.cs">
+      <DependentUpon>subcategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\subcategories.aspx.designer.cs">
+      <DependentUpon>subcategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\users.aspx.cs">
+      <DependentUpon>users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\users.aspx.designer.cs">
+      <DependentUpon>users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\editcategory.aspx.cs">
+      <DependentUpon>editcategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editcategory.aspx.designer.cs">
+      <DependentUpon>editcategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\editgender.aspx.cs">
+      <DependentUpon>editgender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editgender.aspx.designer.cs">
+      <DependentUpon>editgender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="footwear.aspx.cs">
+      <DependentUpon>footwear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="footwear.aspx.designer.cs">
+      <DependentUpon>footwear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="man.aspx.cs">
+      <DependentUpon>man.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="man.aspx.designer.cs">
+      <DependentUpon>man.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pants.aspx.cs">
+      <DependentUpon>pants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pants.aspx.designer.cs">
+      <DependentUpon>pants.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="payment.aspx.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="payment.aspx.designer.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products.aspx.cs">
+      <DependentUpon>products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products.aspx.designer.cs">
+      <DependentUpon>products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="productview.aspx.cs">
+      <DependentUpon>productview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productview.aspx.designer.cs">
+      <DependentUpon>productview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user.Master.cs">
+      <DependentUpon>user.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user.Master.designer.cs">
+      <DependentUpon>user.Master</DependentUpon>
+    </Compile>
+    <Compile Include="forgotpassword.aspx.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotpassword.aspx.designer.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recoverpassword.aspx.cs">
+      <DependentUpon>recoverpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recoverpassword.aspx.designer.cs">
+      <DependentUpon>recoverpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="signin.aspx.cs">
+      <DependentUpon>signin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signin.aspx.designer.cs">
+      <DependentUpon>signin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="edashop.aspx.cs">
+      <DependentUpon>edashop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="edashop.aspx.designer.cs">
+      <DependentUpon>edashop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userhome.aspx.cs">
+      <DependentUpon>userhome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userhome.aspx.designer.cs">
+      <DependentUpon>userhome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="watches.aspx.cs">
+      <DependentUpon>watches.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="watches.aspx.designer.cs">
+      <DependentUpon>watches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="woman.aspx.cs">
+      <DependentUpon>woman.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="woman.aspx.designer.cs">
+      <DependentUpon>woman.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\images\hero1.jpg" />
+    <Content Include="assets\images\hero2.jpg" />
+    <Content Include="assets\images\hero3.jpg" />
+    <Content Include="assets\images\shoes.jpg" />
+    <Content Include="assets\images\watches.jpg" />
+    <Content Include="assets\images\access.jpg" />
+    <Content Include="admin\admin.Master" />
+    <Content Include="user.Master" />
+    <None Include="Dockerfile" />
+    <None Include=".dockerignore">
+      <DependentUpon>Dockerfile</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\images\ProductImages\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50054</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44348/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.11.1\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.11.1\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.11.1\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.11.1\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.11.1\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.11.1\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

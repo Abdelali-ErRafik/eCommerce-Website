@@ -1,0 +1,246 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="user.master.cs" Inherits="eCommerce_Website.assets.user" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EDASHOP</title>    
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <link href="assets/css/main.css" rel="stylesheet" />
+        <link href="assets/css/productscard.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <%--Start NavBar--%>
+    <div>
+       <div class="superNav py-1 bg-light">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 centerOnMobile">
+                    <span class="d-none d-lg-inline-block d-md-inline-block d-sm-inline-block d-xs-none me-3">
+                        <i class="fa-solid fa-envelope me-1"></i>
+                        <a class="text-black-50"  href="#">
+                           EDAShop@gmail.com
+                        </a>
+                    </span>
+                    <span class="me-3">
+                        <i class="fa-solid fa-phone me-1"></i> 
+                        <a class="text-black-50"  href="#">
+                            +212 653334584
+                        </a>
+                    </span>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-none d-lg-block d-md-block-d-sm-block d-xs-none text-end">
+                    <span class="me-3">
+                        <i class="fa-solid fa-phone me-1"></i>
+                        <a class="text-black-50"  href="#">
+                            Location
+                        </a>
+                    </span>                 
+                    <span class="me-3">
+                        <select  class="me-3 border-0 bg-light">
+                          <option value="en-us">English</option>
+                          <option value="en-us">French</option>
+                          <option value="en-us">العربية</option>
+                        </select>
+                        <select  class=" border-0 bg-light">
+                          <option value="en-us">MAD</option>
+                          <option value="en-us">USD</option>
+                          <option value="en-us">ERO</option>
+                        </select>
+                    </span>                   
+                </div>
+            </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light shadow-sm ">
+            <div class="container-fluid">
+            <a class="navbar-brand text-danger" href="userhome.aspx"><i class="fa-solid fa-shop me-2"></i> <strong >EDASHOP</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navLinks collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto ">
+                <li class="nav-item">
+                    <a class="nav-link mx-2" href="userhome.aspx">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-2" href="products.aspx">Products</a>
+                </li>
+                <li class="nav-item position-relative">
+                     <a href="./cart.aspx" id="LnkCart" class="nav-link mx-2" >
+                         Cart <span id="pCount" class="badge bg-danger text-white rounded-circle position-absolute top-0" runat="server">0</span>
+                     </a>                 
+                </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbardropdownmenulink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categories
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbardropdownmenulink">
+                        <li><a class="dropdown-item" href="woman.aspx">Woman</a></li>
+                        <li><a class="dropdown-item" href="man.aspx">Man</a></li>
+                        <li><a class="dropdown-item" href="footwear.aspx">Footwear</a></li>
+                        <li><a class="dropdown-item" href="watches.aspx">Watches</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link mx-2" href="payment.aspx">Payment</a>
+                </li>
+                </ul>
+                <ul class="navbar-nav ms-auto ">
+                <li class="nav-item">
+                     <asp:LinkButton class="nav-link mx-2 text-danger" ID="lnkAdminLogin" runat="server" OnClick="lnkAdminLogin_Click" ><i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Log In</asp:LinkButton>
+                     <asp:LinkButton class="nav-link mx-2 text-danger" ID="lnkAdminLogout" runat="server" OnClick="lnkAdminLogout_Click" ><i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Log out</asp:LinkButton>
+                </li>                
+                </ul>
+            </div>
+        </div>
+    </nav>
+   </div>
+    <%-- End NavBar --%>
+        <div class="">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+     <!-- Footer -->
+            <footer class="text-center text-lg-start bg-light text-muted">
+                <!-- Section: Social media -->
+                <section
+                class="d-flex justify-content-center justify-content-lg-between p-4"
+                >
+                <!-- Left -->
+                <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+                <!-- Left -->
+
+                <!-- Right -->
+                <div>
+                    <a href="" class="me-4 text-reset" />
+                    <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset" />
+                    <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset" />
+                    <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset" />
+                    <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset" />
+                    <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset" />
+                    <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+                </section>
+                <!-- Section: Social media -->
+
+                <!-- Section: Links  -->
+                <section class="bg-light">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class=" fw-bold mb-4">
+                        <i class="fas fa-gem me-3"></i>EDASHOP
+                        </h6>
+                        <p>
+                            EDA Shop its best choise to sell your product and free deleviry
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class=" fw-bold mb-4">
+                        Products
+                        </h6>
+                        <p>
+                        <a href="woman.aspx" class="text-reset">Woman</a>
+                        </p>
+                        <p>
+                        <a href="footwear.aspx" class="text-reset">Footwear</a>
+                        </p>
+                        <p>
+                        <a href="man.aspx" class="text-reset">Man</a>
+                        </p>
+                        <p>
+                        <a href="watches.aspx" class="text-reset">Watches</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class=" fw-bold mb-4">
+                        Links
+                        </h6>
+                        <p>
+                        <a href="userhome.aspx" class="text-reset">Home</a>
+                        </p>
+                        <p>
+                        <a href="products.aspx" class="text-reset">Products</a>
+                        </p>
+                        <p>
+                        <a href="cart.aspx" class="text-reset">Cart</a>
+                        </p>
+                        <p>
+                        <a href="payment.aspx" class="text-reset">Payment</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class=" fw-bold mb-4">
+                        Contact
+                        </h6>
+                        <p><i class="fas fa-home me-3"></i> ISTA ASSAKA, TIKIOUIN</p>
+                        <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        EDAShop@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 212 653334584</p>
+                        <p><i class="fas fa-print me-3"></i> + 212 634865152</p>
+                    </div>
+                    <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+                </section>
+                <!-- Section: Links  -->
+
+                <!-- Copyright -->
+                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2022 Copyright:
+                <a class="text-reset fw-bold" href="edashop.aspx">EDASHOP.com</a>
+                </div>
+                <!-- Copyright -->
+            </footer>
+        <!-- Footer -->
+
+
+    <%--  --%>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

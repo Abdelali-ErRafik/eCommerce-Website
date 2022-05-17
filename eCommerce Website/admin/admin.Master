@@ -1,0 +1,270 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="eCommerce_Website.admin.admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>EDASHOP</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link href="../assets/css/main.css" rel="stylesheet" />
+<%--    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>--%>
+</head>
+<body>
+    <form id="form1" runat="server">
+            <div>
+            <%--Start NavBar--%>
+                <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light shadow-sm ">
+                    <div class="container-fluid">
+                    <a class="navbar-brand text-danger" href="../edashop.aspx"><i class="fa-solid fa-shop me-2"></i> <strong >EDASHOP</strong></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="navLinks collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link mx-2" href="adminhome.aspx">Dashboard</a>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link mx-2" href="products.aspx">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-2" href="brands.aspx">Brands</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-2 " href="categories.aspx">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-2 " href="subcategories.aspx">SubCategories</a>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link mx-2 " href="genders.aspx">Genders</a>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link mx-2 " href="sizes.aspx">Sizes</a>
+                        </li>                        
+                            <li class="nav-item">
+                            <a class="nav-link mx-2 " href="payment.aspx">Payment</a>
+                        </li>                                                
+                        <%-- <li class="nav-item dropdown">
+                            <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Product
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="../admin/addproduct.aspx">Add Product</a></li>
+
+                               <li class="dropdown-header" href="#">Man</li>
+                                <li role="separator" class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Shirts</a></li>
+                                <li><a class="dropdown-item" href="#">Pants</a></li>
+                                <li><a class="dropdown-item" href="#">Denims</a></li>
+                                <li role="separator" class="dropdown-divider"></li>
+                                <li class="dropdown-header" href="#">Woman</li>
+                                <li role="separator" class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Top</a></li>
+                                <li><a class="dropdown-item" href="#">Leggings</a></li>
+                                <li><a class="dropdown-item" href="#">Denims</a></li>
+                            </ul>
+                        </li>--%>
+                        </ul>
+                        <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownAddMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-bars-progress"></i> Manage 
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAddMenu">
+                                <li>
+                                    <a class="dropdown-item"  href="addproduct.aspx">Add Product</a>
+                                </li>                                 
+                                <li>
+                                    <a class="dropdown-item"  href="addbrand.aspx">Add Brand</a>
+                                </li>                                
+                                <li>
+                                    <a class="dropdown-item" href="addcategory.aspx">Add Category</a>
+                                </li>                                
+                                <li>
+                                    <a class="dropdown-item"  href="addsubcategory.aspx">Add SubCategory</a>
+                                </li>                                
+                                <li>
+                                    <a class="dropdown-item"  href="addgender.aspx">Add Gender</a>
+                                </li>                                
+                                <li>
+                                    <a class="dropdown-item" href="addsize.aspx">Add Size</a>
+                                </li>
+                                <li role="separator" class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item"  href="editproduct.aspx">Edit Product</a>
+                                </li>                                 
+                                <li>
+                                    <a class="dropdown-item"  href="editbrand.aspx">Edit Brand</a>
+                                </li>                                
+                                <li>
+                                    <a class="dropdown-item" href="editcategory.aspx">Edit Category</a>
+                                </li>                                
+                                <li>
+                                    <a class="dropdown-item"  href="editsubcategory.aspx">Edit SubCategory</a>
+                                </li>                                
+                                <li>
+                                    <a class="dropdown-item"  href="editgender.aspx">Edit Gender</a>
+                                </li>                                
+                                <li>
+                                    <a class="dropdown-item" href="editsize.aspx">Edit Size</a>
+                                </li>                                
+                            </ul>
+                        </li><li class="nav-item dropdown">
+                            <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownAddMenu2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-gears"></i> Settings
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAddMenu2">                              
+                                <li>
+                                    <a class="dropdown-item"  href="users.aspx">Users</a>
+                                </li>                                
+                                <li>
+                                    <a class="dropdown-item" href="admins.aspx">Admins</a>
+                                </li>                                   
+                                <li role="separator" class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item"  href="adduser.aspx">Add User</a>
+                                </li>                                
+                                <li>
+                                    <a class="dropdown-item" href="addadmin.aspx">Add Admin</a>
+                                </li>                                   
+                                <li role="separator" class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item"  href="edituser.aspx">Edit Users</a>
+                                </li>                                
+                                <li>
+                                    <a class="dropdown-item" href="editadmin.aspx">Edit Admin</a>
+                                </li>                                
+                            </ul>
+                        </li>     
+                        <li class="nav-item ">
+                            <asp:LinkButton class="nav-link mx-2 text-danger" ID="lnkAdminLogout" runat="server" OnClick="lnkAdminLogout_Click"><i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Log out</asp:LinkButton>
+                        </li> 
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+           </div>
+        <%-- End NavBar --%>
+             <%--  --%>
+            <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            </div>
+             <%--  --%>
+            </div>
+    </form>
+       <!-- Footer -->
+            <footer class="text-center text-lg-start bg-light text-muted">
+<%--                <section
+                class="d-flex justify-content-center justify-content-lg-between p-4"
+                >
+                <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+                <div>
+                    <a href="" class="me-4 text-reset" />
+                    <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset" />
+                    <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset" />
+                    <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset" />
+                    <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset" />
+                    <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 text-reset" />
+                    <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                </section>
+                <section class="bg-light">
+                <div class="container text-center text-md-start mt-5">
+                    <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class=" fw-bold mb-4">
+                        <i class="fas fa-gem me-3"></i>Rafik Shop
+                        </h6>
+                        <p>
+                            Rafik Shop its beast choise to sell your product and free deleviry
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class=" fw-bold mb-4">
+                        Products
+                        </h6>
+                        <p>
+                        <a href="#!" class="text-reset">Angular</a>
+                        </p>
+                        <p>
+                        <a href="#!" class="text-reset">React</a>
+                        </p>
+                        <p>
+                        <a href="#!" class="text-reset">Vue</a>
+                        </p>
+                        <p>
+                        <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class=" fw-bold mb-4">
+                        Useful links
+                        </h6>
+                        <p>
+                        <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                        <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p>
+                        <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                        <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class=" fw-bold mb-4">
+                        Contact
+                        </h6>
+                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    </div>
+                    </div>
+                </div>
+                </section>--%>
+
+<%--                <div class="text-center p-4 position-fixed start-0 end-0 bottom-0"> style="background-color:#f6f6f8; color:#878787;">
+                © 2021 Copyright:
+                <a class="text-reset fw-bold" href="https://mdbootstrap.com/">RafikShop</a>
+                </div>--%>      
+                
+                <div class="text-center p-4 " style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2021 Copyright:
+                <a class="text-reset fw-bold" href="../edashop.aspx">EDASHOP</a>
+                </div>
+            </footer>
+        <!-- Footer -->
+    <%--  --%>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
